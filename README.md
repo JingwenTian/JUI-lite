@@ -8,14 +8,14 @@
 
 **目录结构**
 
-		/JUI - lite
-			| - css 样式目录
-				| - jui.css 核心样式
-				| - reset.css 重置样式
-				| - common.css 公用样式
-			| - demo 示例目录
-			| - font 字体目录
-			| - images 图片目录
+	/JUI - lite
+		| - css 样式目录
+			| - jui.css 核心样式
+			| - reset.css 重置样式
+			| - common.css 公用样式
+		| - demo 示例目录
+		| - font 字体目录
+		| - images 图片目录
 
 `JUI - lite` 只保留了常用的样式, 如果需要更多可以补充进来
 
