@@ -1,0 +1,107 @@
+/*
+	Common.css // JUI - lite : Focus on mobile web app
+	----------------------------------------------------------
+	@DESC 布局中公用部分的样式(header/footer/aside等)
+	----------------------------------------------------------
+	@Author JingwenTian www.jingwentian.com
+	----------------------------------------------------------
+	
+	全局定义项:
+	@1 header头部公共样式
+	@2 footer底部公共样式
+	@3 aside边栏公共样式
+
+	DEMO见demo1.html
+	
+-------------------------------------------------------------------------------*/
+
+/* @TODO 后期会用less来定义全局的变量
+-------------------------------------------------------------------------------*/
+
+/* header */
+.jui-header { width:100%; height:44px; overflow:hidden; background-color:#2bab79;}
+.jui-header .jui-icon { display:inline-block; width:44px; height:44px; text-align:center; font-size:24px; line-height:44px; color:#fff;}
+.jui-header-menu { float:left; width:35%;}
+.jui-header-logo { float:left; width:30%; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; text-align:center; font-size:20px; line-height:44px; color:#fff;}
+.jui-header-logo img { display:block; margin:0 auto;}
+.jui-header-rtool { float:left; width:35%; text-align:right;}
+.jui-header-rtool .btn, .jui-header-menu .btn { display:inline-block; padding:0 8px; line-height:44px; text-align:center; color:#fff;}
+
+/* footer-basic */
+.jui-footerBasic { width:100%; margin:20px 0; text-align:center; font-size:10px; line-height:20px;}
+.jui-footerBasic .copyright { color:#9ea3ab;}
+.jui-footerBasic .switchStyle { color:#9ea3ab;}
+.jui-footerBasic .switchStyle span { margin-left:30px;}
+.jui-footerBasic .switchStyle span:first-child { margin-left:0;}
+.jui-footerBasic .switchStyle a { color:#444;}
+
+
+/* footer-normal */
+.jui-footerNormal { margin-top:20px; background-color:#2d3741; border-top:2px solid #425160; padding:10px;}
+.jui-footerNormal .follows { width:100%; overflow:hidden; border-bottom:1px solid #3d4349; padding-bottom:10px; margin-bottom:10px;}
+.jui-footerNormal .followTitle { float:left; font-size:15px; line-height:34px; color:#fff;}
+.jui-footerNormal .followList { float:right;}
+.jui-footerNormal .followList a { float:left; width:34px; height:34px; overflow:hidden; text-indent:-100px; margin-left:10px; background:url(../images/foot-follow.png) no-repeat; background-size:166px 34px;}
+.jui-footerNormal .followList a.weibo { background-position:0 0;}
+.jui-footerNormal .followList a.weixin { background-position:-44px 0;}
+.jui-footerNormal .followList a.facebook { background-position:-88px 0;}
+.jui-footerNormal .followList a.renren { background-position:-132px 0;}
+.jui-footerNormal .entrys { width:100%; overflow:hidden;}
+.jui-footerNormal .switchStyle { float:left; font-size:15px;}
+.jui-footerNormal .switchStyle span { margin-right:26px; color:#9ea3ab;}
+.jui-footerNormal .switchStyle a { color:#fff;}
+.jui-footerNormal .feedback { float:right; font-size:13px;}
+.jui-footerNormal .feedback a { color:#2cbc81;}
+.jui-footerNormal .copyright{ color:#9ea3ab; font-size:12px;}
+
+/* aside 侧边栏 */
+.jui-asides { position:absolute; left:-250px; top:0; width:250px;}
+.jui-asideMask { position:absolute; left:0; right:0; top:0; bottom:0; width:100%; background-color:rgba(0,0,0,0.5);}
+.jui-aside {
+  -webkit-transition: -webkit-transform 0.4s;
+  transition: transform 0.4s;
+  -webkit-overflow-scrolling: touch;
+  overflow-scrolling: touch;
+  position:fixed; top:0; width:250px; bottom:0; overflow-y:scroll; background-color:#2d3741;
+}
+.jui-aside.translateX {
+  -webkit-transform: translateX(250px); 
+  -ms-transform: translateX(250px); 
+  transform: translateX(250px);
+}
+.jui-asideHead { padding:13px 10px 10px;}
+.jui-asideHead .signBtn { text-align:right; line-height:18px; color:#fff;}
+.jui-asideHead .signBtn a { color:#fff;}
+.jui-asideHead .userInfos { padding-left:65px; height:56px;}
+.jui-asideHead .face { float:left; margin-left:-65px; width:54px; height:54px; border:1px solid #fff; border-radius:50%; overflow:hidden;}
+.jui-asideHead .face img { display:block; border-radius:50%;}
+.jui-asideHead .name { font-size:16px; line-height:24px;}
+.jui-asideHead .name a { color:#fff;}
+.jui-asideHead .message { position:relative; margin-top:10px; line-height:18px;}
+.jui-asideHead .message .jui-icon { font-size:18px; color:#fff;}
+.jui-asideHead .message .number { position:absolute; left:12px; top:-6px; font-size:8px; line-height:13px; width:13px; background-color:#cb0900; border-radius:50%; text-align:center; color:#fff;}
+.jui-asideHead .searchs { position:relative; margin-top:12px;}
+.jui-asideHead .searchs .jui-icon { position:absolute; left:9px; top:5px; font-size:20px; color:#fff;}
+.jui-asideHead .searchs input {
+  -webkit-box-sizing: border-box; 
+  -moz-box-sizing: border-box;    
+  box-sizing: border-box;         
+  width:100%; height:28px; padding:4px 10px 4px 35px; border:none; border-radius:4px; background-color:#9ea3ab; font-size:14px; line-height:20px; color:#fff;
+}
+.jui-asideNav {}
+.jui-asideNav li { border-top:1px solid #232d34; background-color:#36424b;}
+.jui-asideNav li:nth-child(even) { background-color:#364049;}
+.jui-asideNav a { display:block; padding-left:15px; font-size:16px; line-height:44px; color:#ced1d5;}
+.jui-asideNav .jui-icon { font-size:18px; margin-right:19px; color:#b6becb;}
+
+.jui-asideTool { border-top:9px solid #232d34; background-color:#2d3741;}
+.jui-asideTool li { border-top:1px solid #232d34;}
+.jui-asideTool a { display:block; padding-left:15px; font-size:16px; line-height:44px; color:#ced1d5;}
+.jui-asideTool .jui-icon { font-size:18px; margin-right:19px;}
+.jui-asideTool ._reply_line { color:#9fceda;}
+.jui-asideTool ._question { color:#9fceda;}
+.jui-asideTool ._exit { color:#2bab79;}
+
+
+
+

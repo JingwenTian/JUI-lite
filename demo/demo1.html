@@ -1,0 +1,270 @@
+<!doctype html>
+<html lang="zh-cn">
+<head>
+<meta charset="utf-8">
+<title>JUI ICON DEMO</title>
+<link href="../css/reset.css" rel="stylesheet" type="text/css" media="screen" />
+<link href="../css/jui.css" rel="stylesheet" type="text/css" media="screen" />
+<link href="../css/common.css" rel="stylesheet" type="text/css" media="screen" />
+<script type="text/javascript" src="http://cdn.staticfile.org/jquery/1.10.0/jquery.js"></script>
+<style>
+/* 文本-显示更多(示例样式) */
+.whiteBox {
+	background-color: #fff;
+	border-top: 1px solid #ced1d5;
+	border-bottom: 1px solid #ced1d5;
+}
+.showMore .h2 {
+	padding: 10px 10px 10px 0;
+	margin-left: 10px;
+	border-bottom: 1px solid #e6e8ea;
+}
+.showMore .texts {
+	margin: 10px;
+	max-height: 48px;
+	overflow: hidden;
+}
+
+/* tabs 列表样式 */
+.bbsForums {
+	border-bottom: #EEEFF1 solid 1px;
+	overflow: hidden;
+	padding: 15px 0px;
+	margin-left: 10px;
+}
+.bbsForumsTit {
+	display: block;
+	padding: 0px 10px 0px 0px;
+	font-size: 14px;
+}
+.bbsForumsHandler {
+	line-height: 24px;
+	overflow: hidden;
+	padding: 0px 10px 0px 0px;
+}
+.bbsForumsTit a {
+	color: #494949;
+	word-break: break-all;
+}
+.bbsForumsDetail {
+	float: right;
+	color: #999;
+	font-size: 12px;
+}
+.bbsForumsInfo {
+	float: left;
+	color: #999;
+	font-size: 12px;
+}
+
+</style>
+
+</head>
+
+<body>
+<div class="jui-page">
+
+	<!-- DEMO:头部样式 -->
+	<header class="jui-header">
+	    <p class="jui-header-menu" id="headerMenu"><span class="jui-icon _menu"></span></p>
+		<p class="jui-header-logo"><a href="#"><img src="../images/jui-logo.png" width="77" height="44" alt=""></a></p>
+		<div class="jui-header-rtool">
+            <a href="#"><span class="jui-icon _map"></span></a>
+        </div>
+	</header>
+
+
+	<!-- DEMO:头部搜索条 -->
+	<p class="jui-topSearch">
+		<span class="jui-icon _search"></span>
+	    <input type="text" name="" value="" placeholder="头部搜索条"> 
+	</p>
+
+
+	<!-- DEMO:文本-显示更多 -->
+	<article class="showMore whiteBox mt10">
+		<h2 class="h2">文本-显示更多</h2>
+		<div class="texts">
+			<div class="text poiSummaryMarkdown">
+				<p>香港著名的24小时连锁茶餐厅，无论是名人明星还是平民百姓都会“来翠华说天光”，称得上是香港饭堂，半夜来填肚的话还可以 看到在兰桂坊刚high完来这里醒酒的各路人马。咖喱鱼蛋、奶油猪、猪仔包和鱼汤粉面都很有名，其余菜色不是特别出挑，但胜在齐全。</p>
+				<p>招牌菜：奶油猪、猪仔包、奶油猪仔包。</p>
+			</div>
+		</div>
+		<p class="jui-textMore"><span class="jui-icon _down"></span><span class="jui-icon _up"></span></p>
+	</article>
+
+	<!-- DEMO:tabs -->
+	<section style="background-color:#fff;border-bottom: none;padding: 10px 0px 5px 0px;">
+		<div class="jui-tabs">
+			<ul class="jui-tabNav">
+	            <li class="current"><a href="#">全部</a></li>
+	            <li><a href="#">精华</a></li>
+	            <li><a href="#">推荐</a></li>
+	        </ul>
+	        <div class="jui-tabContent">
+				<div class="show">
+					<ul class="bbsForums">
+						<li class="bbsForumsTit">
+							<a href="#"><span>[资讯信息]</span> 中国因私护照免签落地签总结【2014年4月最新最强版】</a>
+						</li>
+						<li class="bbsForumsHandler">
+							<span class="bbsForumsDetail">11111</span>	
+							<span class="bbsForumsInfo">2013-05-20</span>
+						</li>
+					</ul>
+					<ul class="bbsForums">
+						<li class="bbsForumsTit">
+							<a href="#"><span>[资讯信息]</span> 中国因私护照免签落地签总结【2014年4月最新最强版】</a>
+						</li>
+						<li class="bbsForumsHandler">
+							<span class="bbsForumsDetail">11111</span>	
+							<span class="bbsForumsInfo">2013-05-20</span>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</section>
+	
+
+	<!-- DEMO:底部toolbar -->
+	<section class="jui-toolbar">
+		<ul>
+			<li><a href="#"><span class="jui-icon _write"></span>回复</a></li>
+			<li><a href="#"><span class="jui-icon _star"></span>收藏</a></li>
+			<li><a href="#"><span class="jui-icon _share _fill"></span>分享</a></li>
+		</ul>
+	</section>
+
+	<!-- DEMO: footer1 -->
+	<footer class="jui-footerBasic">
+        <p class="copyright">2014 © JUI™ jingwentian.com All rights reserved.</p>
+        <p class="switchStyle">
+            <span class="current">手机版</span>
+            <span><a class="js_pc_url" href="#">电脑版</a></span>
+            <span><a href="#">APP</a></span>
+        </p>
+	</footer>
+
+	<!-- DEMO: footer2 -->
+	<footer class="jui-footerNormal">
+        <div class="follows">
+                <p class="followTitle"><a href="#">关注JUI</a></p>
+                
+                <p class="followList">
+                    <a href="#" class="weibo">微博</a>
+                    <a href="#" class="weixin">微博</a>
+                    <a href="#" class="facebook">微博</a>
+                    <a href="#" class="renren">微博</a>
+                </p>
+        </div>
+        <div class="entrys">
+			<p class="switchStyle">
+			    <span class="current">手机版</span>
+                <span><a href="#">电脑版</a></span>
+                <span><a href="#">APP</a></span>
+			</p>
+                <p class="feedback"><a href="#">意见反馈</a></p>
+        </div>
+        <p class="copyright">2014 © JUI™ jingwentian.com All rights reserved.</p>
+
+	</footer>
+
+</div>
+
+
+<!-- DEMO:边栏导航 -->
+<aside class="jui-asides">
+	<section class="jui-aside">
+        
+		<section class="jui-asideHead">
+			<div class="userInfos">
+				<p class="face"><a href="#"><img src="http://www.jingwentian.com/avatar/normal/1.png" width="54" height="54" alt=""></a></p>
+				<p class="name"><a href="#">jingwentian</a></p>
+				<p class="message"><a href="#"><span class="jui-icon _msg"></span><span class="number">1</span></a></p>
+			</div>
+			<p class="searchs"><span class="jui-icon _search"></span><input type="" name="" placeholder="搜索目的地/游记攻略/问答" readonly="readonly"></p>
+		</section>
+	        
+		<nav class="jui-asideNav">
+			<ul>
+				<li><a href="#"><span class="jui-icon _home"></span><span>首页</span></a></li>
+				<li><a href="#"><span class="jui-icon _poiStrong"></span><span>111</span></a></li>
+				<li><a href="#"><span class="jui-icon _plan"></span><span>222</span></a></li>
+				<li><a href="#"><span class="jui-icon _lm"></span><span>333</span></a></li>
+				<li><a href="#"><span class="jui-icon _ask"></span><span>444</span></a></li>
+				<li><a href="#"><span class="jui-icon _bbs"></span><span>555</span></a></li>
+				<li><a href="#"><span class="jui-icon _hotel"></span><span>666</span></a></li>
+				<li><a href="#"><span class="jui-icon _flight"></span><span>777</span></a></li>
+			</ul>
+		</nav>
+		<section class="jui-asideTool">
+			<ul>
+				<li><a href="#"><span class="jui-icon _reply_line"></span><span>写点评</span></a></li>
+				<li><a href="#"><span class="jui-icon _question"></span><span>提问题</span></a></li>
+				<li><a href="#"><span class="jui-icon _exit"></span><span>退出登录</span></a></li>
+			</ul>
+		</section>
+	</section>
+</aside>
+
+<script type="text/javascript">
+$(function() {
+
+	var $getMore = $('.jui-textMore'),
+		$texts = $('.texts'),
+		$page = $('.jui-page'),
+		$aside = $('.jui-aside'),
+		$headerMenu = $('#headerMenu');
+
+	/*文本-显示更多 START*/
+	$getMore.on('click', function() {
+		$(this).toggleClass('showed');
+		if($(this).hasClass('showed')) {
+			$texts.css('max-height','none');
+		} else {
+			$texts.css('max-height','48px');
+		}
+	});
+	/*文本-显示更多 END*/
+
+	/* 边栏导航 START */
+	function bodyPreventDefault(event) {
+		event.preventDefault();
+	}
+	$aside.on('touchmove', function(event) {
+		event.stopPropagation();
+	}, false);
+
+	function asideShow() {
+		$page.addClass("translateX");
+		$aside.addClass("translateX");
+		$(document).on('touchmove', bodyPreventDefault, false);
+	}
+
+	function asideHide() {
+		$page.removeClass("translateX");
+		$aside.removeClass("translateX");
+		$(document).off('touchmove', bodyPreventDefault);
+	}
+	$page.on('click', function() {
+		if ($page.hasClass("translateX")) {
+			asideHide();
+		}
+	});
+	$("#headerMenu, .headerMenu").on('click', function(event) {
+		event.stopPropagation();
+		if ($page.hasClass("translateX")) {
+			asideHide();
+		} else {
+			asideShow();
+		}
+	});
+	/* 边栏导航 END */
+});
+
+</script>
+
+
+</body>
+</html>

@@ -1,0 +1,455 @@
+/*
+ 
+	JUI.CSS // JUI - lite : Focus on mobile web app
+	----------------------------------------------------------
+	@DESC JUI-lite 核心样式库(简易版), 专用于移动web应用, 包括了基础样式和常用小组件
+	----------------------------------------------------------
+	@Author JingwenTian www.jingwentian.com
+	----------------------------------------------------------
+	@Usage
+
+	全局定义项:
+	@1 标题字体
+	@2 position
+	@3 margin
+	@4 page
+	@5 layout
+	@5 grid 
+		|------------------------------------------
+		<div class="jui-row">
+		    <div class="column col2-1">1111</div>
+		    <div class="column col2-1">2222</div>
+		</div>	
+		------------------------------------------|
+	@7 form
+		|------------------------------------------
+		<form class="jui-form">
+			<input type="text" class="jui-input">
+			<textarea class="jui-textarea"></textarea>
+		</form>
+		------------------------------------------|
+	@8 button
+		|------------------------------------------
+		<button class="jui-btn btnA fluid">buton</button> 100%宽
+		<button class="jui-btn btnA small">buton</button> 
+		------------------------------------------|
+	@9 pagination-load 加载更多样式
+		|------------------------------------------
+		<ul></ul><!--list-->
+		<p class="jui-paginationLoad [loading/error]"><a href="javascript:void(0)"><span>加载更多</span></a></p>
+		------------------------------------------|
+	@10 textMore文本-显示更多 
+		|------------------------------------------
+		<p class="jui-textMore"><span class="jui-icon _down"></span><span class="jui-icon _up"></span></p>
+		参考demo1.html
+		------------------------------------------|
+	@11 top-search 头部搜索条
+		|------------------------------------------
+		<p class="jui-topSearch"><input type="text" name="" value="" placeholder="头部搜索条"></p>
+		参考demo1.html
+		------------------------------------------|
+	@12 toolbar 底部toolbar
+		|------------------------------------------
+		<section class="jui-toolbar">
+			<ul>
+				<li><a href="#"><span class="jui-icon _write"></span>回复</a></li>
+				<li><a href="#"><span class="jui-icon _star"></span>收藏</a></li>
+				<li><a href="#"><span class="jui-icon _share _fill"></span>分享</a></li>
+			</ul>
+		</section>
+		------------------------------------------|
+	@13 Tabs 选项卡
+		|------------------------------------------
+		<div class="jui-tabs">
+			<ul class="jui-tabNav">
+	            <li class="current"><a href="#">全部</a></li>
+	            <li><a href="#">精华</a></li>
+	            <li><a href="#">推荐</a></li>
+	        </ul>
+	        <div class="qui-tabContent">
+				//列表等
+	        </div>
+	    </div>
+		------------------------------------------|
+	@14 icon-font
+		|------------------------------------------
+		JUI只内置了一个简易的icon font, 如果需要更多可以引入Font-Awesome( http://fontawesome.io )
+		<span class="jui-icon _menu"></span> 
+		应用时参考icon.html
+		------------------------------------------|
+	
+-------------------------------------------------------------------------------*/
+
+/* @TODO 后期会用less来定义全局的变量
+-------------------------------------------------------------------------------*/
+
+/* font */
+.h1 { font-size:24px; line-height:30px; font-weight:bold;}
+.h2 { font-size:18px; line-height:24px; font-weight:bold;}
+.h3 { font-size:16px; line-height:20px; font-weight:bold;}
+
+/* position */
+.tl {text-align:left;}
+.tc {text-align:center;}
+.tr {text-align:right;}
+.bc {margin-left:auto;margin-right:auto;}
+.fl {float:left;display:inline;}
+.fr {float:right;display:inline;}
+.cb {clear:both;}
+.clear {clear:both;height:0;overflow:hidden;}
+.cl {clear:left;}
+.cr {clear:right;}
+.clearfix:after {visibility:hidden;display:block;font-size:0;content:" ";clear:both;height:0;}
+.clearfix {zoom:1;}
+.vm {vertical-align:middle;}
+.pr {position:relative;}
+.pa {position:absolute;}
+.zoom {zoom:1;}
+.hidden {visibility:hidden;}
+.visible {visibility:visible;}
+.none {display:none;}
+.block {display:block;}
+.inline {display:inline;}
+
+
+/* margin */
+.mt10 { margin-top:10px;}
+.mb10 { margin-bottom:10px;}
+.mt15 { margin-top:15px;}
+.mb15 { margin-bottom:15px;}
+
+/* page */
+.jui-page { 
+	width:100%;
+	-webkit-transition: -webkit-transform 0.4s;
+    transition: transform 0.4s;
+}
+.jui-page.translateX { 
+    -webkit-transform: translateX(250px); 
+    -ms-transform: translateX(250px); 
+    transform: translateX(250px);
+}
+.jui-page.translateX:before { content:''; position:absolute; z-index:9999; left:0; top:0; bottom:0; right:0; background-color:rgba(255,255,255,0.0);}
+
+/* layout */
+.container { width:100%;-webkit-box-sizing: border-box; -moz-box-sizing: border-box;box-sizing: border-box;}
+
+/* grid */
+.jui-row { padding:0 5px;}
+.jui-row:after { visibility:hidden;display:block;font-size:0;content:" ";clear:both;height:0;}
+.jui-row > .column {
+	float: left;
+    -webkit-box-sizing: border-box; 
+    -moz-box-sizing: border-box;   
+    box-sizing: border-box;        
+    width: 100%;
+	padding: 0 5px;
+}
+.jui-row > .column.col2-1 { width: 50%;}
+.jui-row > .column.col3-1 { width: 33.333333%;}
+.jui-row > .column.col4-1 { width: 25%;}
+.jui-row > .column.col5-1 { width: 20%;}
+
+/* form */
+.jui-form {
+	margin: 0 0 18px;
+	font-size: 12px;
+	line-height: 18px;
+}
+
+.jui-form select:focus,
+.jui-form textarea:focus,
+.jui-form input[type="text"],
+.jui-form input[type="password"],
+.jui-form input[type="datetime"],
+.jui-form input[type="datetime-local"],
+.jui-form input[type="date"],
+.jui-form input[type="month"],
+.jui-form input[type="time"],
+.jui-form input[type="week"],
+.jui-form input[type="number"],
+.jui-form input[type="email"],
+.jui-form input[type="url"],
+.jui-form input[type="search"],
+.jui-form input[type="tel"],
+.jui-form input[type="color"] {
+	border-color: #518594;
+	outline: 0;
+	outline: thin dotted \9;
+}
+
+.jui-form select,
+.jui-form textarea,
+.jui-form input[type="text"],
+.jui-form input[type="password"],
+.jui-form input[type="datetime"],
+.jui-form input[type="datetime-local"],
+.jui-form input[type="date"],
+.jui-form input[type="month"],
+.jui-form input[type="time"],
+.jui-form input[type="week"],
+.jui-form input[type="number"],
+.jui-form input[type="email"],
+.jui-form input[type="url"],
+.jui-form input[type="search"],
+.jui-form input[type="tel"],
+.jui-form input[type="color"] {
+	display: inline-block;
+	height:32px;
+	/*padding: 2px 4px;*/
+	font-size:14px;
+	line-height: 20px;
+	color: #555555;
+	background-color:#fff; 
+	border:1px solid #e2e2e2; 
+	vertical-align: middle;
+	-webkit-box-sizing: border-box; 
+    -moz-box-sizing: border-box;    
+    box-sizing: border-box;	
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	border-radius: 3px;
+	-webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.08);
+	-moz-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.08);
+	box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.08);
+	-webkit-transition: border linear .2s, box-shadow linear .2s;
+	-moz-transition: border linear .2s, box-shadow linear .2s;
+	-o-transition: border linear .2s, box-shadow linear .2s;
+	transition: border linear .2s, box-shadow linear .2s;
+
+}
+
+.jui-form textarea {height: auto;resize: none;}
+
+.jui-form input[type="radio"],
+.jui-form input[type="checkbox"] {
+  width: 20px;
+  height: 20px;
+  vertical-align: middle;
+}
+.jui-form input[type="file"],
+.jui-form input[type="image"],
+.jui-form input[type="submit"],
+.jui-form input[type="reset"],
+.jui-form input[type="button"] {
+  width: auto;
+}
+
+.jui-input {          
+    width:100%; height:32px; padding:6px 10px;font-size:14px;line-height:20px;
+}
+.jui-textarea {        
+    width:100%; min-height:58px; padding:5px 10px;font-size:14px; line-height:24px;
+}
+
+.jui-form .input-mini {width: 40px;}
+.jui-form .input-small {width: 60px;}
+.jui-form .input-medium {width: 120px;}
+.jui-form .input-large {width: 200px;}
+.jui-form .input-xlarge {width: 350px;}
+.jui-form .input-xxlarge {width: 500px;}
+
+/* button */
+.jui-btn {
+	display:inline-block;
+    -webkit-box-sizing: border-box; 
+    -moz-box-sizing: border-box;    
+    box-sizing: border-box;         
+	height:36px; padding:0 18px; border:1px solid transparent; border-radius:3px; overflow:visible;
+	vertical-align:middle; text-align:center; white-space:nowrap;
+	font-size:14px; line-height:36px; cursor:pointer;
+}
+.jui-btn.small { height:24px; padding:0 12px; font-size:12px; line-height:24px;}
+.jui-btn.fluid { width:100%; box-shadow:0 1px 2px rgba(0,0,0,0.2);}
+.jui-btn.btnA { background-color:#2bab79; color:#fff;}
+.jui-btn.btnA:active { background-color:#228961;}
+.jui-btn.btnB { background-color:#4998cc; color:#fff;}
+.jui-btn.btnB:active { background-color:#3a7aa3;}
+.jui-btn.btnC { background-color:#f26622; color:#fff;}
+.jui-btn.btnC:active { background-color:#c2521b;}
+.jui-btn.btnWeak { border-color:#9ea3ab; background-color:#fff; color:#444;}
+.jui-btn.btnWeak:active { border-color:#2bab79; color:#2bab79;}
+.jui-btn.btnWeak.fluid { border-color:transparent;}
+.jui-btn.btnDisabled { border-color:#ccc; background-color:#eee; color:#ccc; cursor:default;}
+.jui-btn.btnDisabled:active {}
+.jui-btn.btnTag { background-color:#e8f2f9; color:#4998cc;}
+.jui-btn.btnTag:active { background-color:#c8e0f0;}
+
+/* pagination-load  加载更多样式 */
+.jui-paginationLoad { background-color:#fff;}
+.jui-paginationLoad a { display:block; text-align:center; color:#9ea3ab; font-size:16px; line-height:44px;}
+.jui-paginationLoad a:active { color:#2bab79;}
+.jui-paginationLoad span { display:inline-block;}
+.jui-paginationLoad.loading span { padding-left:28px; background:url(../images/icon-turning.gif) no-repeat left center; background-size:18px 18px;}
+.jui-paginationLoad.error span { padding-left:28px; background:url(../images/icon-pageload-error.png) no-repeat left center; background-size:18px 18px;}
+
+
+/* 文本-显示更多 */
+.jui-textMore { background-color:#fff; text-align:center; cursor:pointer;}
+.jui-textMore .jui-icon { font-size:18px; color:#9ea3ab;}
+.jui-textMore:active .jui-icon { color:#2bab79;}
+.jui-textMore ._up { display:none;}
+.jui-textMore.showed ._up { display:inline-block;}
+.jui-textMore.showed ._down { display:none;}
+
+/* top-search  头部搜索条 */
+.jui-topSearch { position:relative; padding:10px; background-color:#fff; overflow:hidden;}
+.jui-topSearch > input {
+  -webkit-box-sizing: border-box; 
+  -moz-box-sizing: border-box;    
+  box-sizing: border-box;         
+  display:block; width:100%; height:32px; border:1px solid #ced1d5; padding:5px 35px 5px 10px; background-color:#f3f4f4;
+  font-size:14px; line-height:20px;
+}
+.jui-topSearch > .jui-icon { position:absolute; right:20px; top:17px; font-size:18px; color:#b3b3b3;}
+
+/* 页底toolbar */
+.jui-toolbar { position:fixed; z-index:9; bottom:0; width:100%; max-width:640px; background-color:rgba(0,0,0,0.8);}
+.jui-toolbar > ul {
+  display:-webkit-box; display:-webkit-flex; display:flex;
+  -webkit-box-sizing: border-box; 
+  -moz-box-sizing: border-box;    
+  box-sizing: border-box;         
+  width:100%; max-width:640px; margin:0 auto; padding:7px 10px 0;
+}
+.jui-toolbar > ul li { -webkit-box-flex: 1; -webkit-flex:1; flex:1;}
+.jui-toolbar > ul a { display:block; font-size:12px; color:#fff; text-align:center;}
+.jui-toolbar > ul .jui-icon { display:block; width:24px; height:24px; margin:0 auto; padding-top:5px; background-color:#444; border-radius:50%; font-size:14px;}
+
+/* tabs切换 */
+.jui-tabs {}
+.jui-tabNav { display:-webkit-box; display:-webkit-flex; display:flex; -webkit-box-sizing:border-box; -moz-box-sizing:border-box; box-sizing:border-box; width:100%; padding:0 5px; border-bottom:1px solid #e6e8ea; background-color:#fff;}
+.jui-tabNav > li { -webkit-box-flex: 1; -webkit-flex:1; flex:1; height:44px; line-height:44px; font-size:16px; color:#444; text-align:center;}
+.jui-tabNav > li > a { display:block; color:#444 }
+.jui-tabNav > li.current > a { position:relative; z-index:1; color:#2bab79; }
+.jui-tabNav > li.current > a:after { content:""; position:absolute; left:50%; bottom:-5px; display:block; width:8px; height:8px; margin-left:-4px; border-right:solid 1px #e6e8ea; border-bottom:solid 1px #e6e8ea; background-color:#fff; -webkit-transform:rotate(45deg); -ms-transform:rotate(45deg); transform:rotate(45deg); }
+.jui-tabContent {background-color: #fff;}
+.jui-tabContent > div { display:none; }
+.jui-tabContent > div.show { display:block; }
+.jui-tabs.min .jui-tabNav { display:block; width:auto; height:44px; margin:0px 10px; padding:0; font-size:14px;}
+.jui-tabs.min .jui-tabNav > li { display:block; float:left; height:44px; padding:0 10px; font-size:14px; line-height:44px; }
+.jui-tabs.min .jui-tabNav > li > a:after { bottom:-4px; }
+
+
+/* icon-font
+ * -------------------------- */
+@font-face {
+    font-family: 'Icons';
+    src: url('../font/jui-icons.eot'); /* IE9*/
+    src: url('../font/jui-icons.eot?#iefix') format('embedded-opentype'), 
+         url('../font/jui-icons.woff') format('woff'), 
+         url('../font/jui-icons.ttf') format('truetype'), 
+         url('../font/jui-icons.svg#qyer-icons') format('svg'); 
+}
+.jui-icon {
+  /*font-size: 30px;*/
+  display: inline-block;
+  height: 1em;
+  font-family: 'Icons' !important;
+  font-style: normal;
+  line-height: 1;
+  font-weight: normal;
+  text-decoration: inherit;
+  text-align: center;
+  speak: none;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  -moz-font-smoothing: antialiased;
+  font-smoothing: antialiased;
+}
+   
+.jui-icon._poiStrong:before { content: "\f901"; }
+.jui-icon._post:before { content: "\f902"; }
+.jui-icon._album:before { content: "\f903"; }
+.jui-icon._plan:before { content: "\f904"; }
+.jui-icon._ask:before, .jui-icon._question.fill:before { content: "\f905"; }
+.jui-icon._bbs:before { content: "\f906"; }
+.jui-icon._lm:before { content: "\f907"; }
+.jui-icon._hotel:before { content: "\f908"; }
+.jui-icon._flight:before { content: "\f909"; }
+.jui-icon._insurance:before { content: "\f90a"; }
+.jui-icon._visa:before { content: "\f90b"; }
+.jui-icon._traffic:before { content: "\f90c"; }
+.jui-icon._guide:before { content: "\f90d"; }
+    
+.jui-icon._poi:before { content: "\f90e"; }
+.jui-icon._view:before { content: "\f90f"; }
+.jui-icon._exp:before { content: "\f910"; }
+.jui-icon._food:before { content: "\f911"; }
+.jui-icon._shopping:before { content: "\f912"; }
+    
+.jui-icon._home:before { content: "\f920"; }
+.jui-icon._menu:before { content: "\f921"; }
+.jui-icon._msg:before { content: "\f922"; }
+.jui-icon._filter:before { content: "\f923"; }
+.jui-icon._list:before { content: "\f924"; }
+.jui-icon._listPOI:before { content: "\f925"; }
+.jui-icon._map:before { content: "\f926"; }
+.jui-icon._search:before { content: "\f927"; }
+.jui-icon._focus:before { content: "\f928"; }
+.jui-icon._date:before { content: "\f929"; }
+    
+.jui-icon._write:before { content: "\f92a"; }
+.jui-icon._photo:before { content: "\f92b"; }
+.jui-icon._addToPlan:before { content: "\f92c"; }
+.jui-icon._question:before { content: "\f92d"; }
+    
+.jui-icon._reply:before { content: "\f92f"; }
+.jui-icon._reply._fill:before { content: "\f92e"; }
+.jui-icon._reply_line:before { content: "\f931"; }
+.jui-icon._reply_line._fill:before { content: "\f930"; }
+.jui-icon._heart:before { content: "\f933"; }
+.jui-icon._heart._fill:before { content: "\f932"; }
+.jui-icon._star:before { content: "\f935"; }
+.jui-icon._star._fill:before { content: "\f934"; }
+.jui-icon._flag:before { content: "\f937"; }
+.jui-icon._flag._fill:before { content: "\f936"; }
+.jui-icon._thumb:before { content: "\f939"; }
+.jui-icon._thumb._fill:before { content: "\f938"; }
+.jui-icon._share:before { content: "\f93b"; }
+.jui-icon._share._fill:before { content: "\f93a"; }
+
+.jui-icon._exit:before { content: "\f93c"; }
+
+.jui-icon._back:before { content: "\f93d"; }
+.jui-icon._close:before { content: "\f93e"; }
+.jui-icon._plus:before { content: "\f93f"; }
+.jui-icon._minus:before { content: "\f940"; }
+    
+.jui-icon._up:before { content: "\f950"; }
+.jui-icon._right:before { content: "\f951"; }
+.jui-icon._down:before { content: "\f952"; }
+.jui-icon._left:before { content: "\f953"; }
+.jui-icon._triUp:before { content: "\f954"; }
+.jui-icon._triRight:before { content: "\f955"; }
+.jui-icon._triDown:before { content: "\f956"; }
+.jui-icon._triLeft:before { content: "\f957"; }
+    
+.jui-icon._success:before { content: "\f960"; }
+.jui-icon._alert:before { content: "\f961"; }
+.jui-icon._error:before { content: "\f962"; }
+.jui-icon._info:before { content: "\f963"; }
+
+.jui-icon._introArrow:before { content: "\f970"; }
+.jui-icon._introBook:before { content: "\f971"; }
+.jui-icon._address:before { content: "\f972"; }
+.jui-icon._direction:before { content: "\f973"; }
+.jui-icon._tel:before { content: "\f974"; }
+.jui-icon._ticket:before { content: "\f975"; }
+.jui-icon._link:before { content: "\f976"; }
+.jui-icon._tag:before { content: "\f977"; }
+.jui-icon._cellphone:before { content: "\f978"; }
+.jui-icon._time:before { content: "\f979"; }
+.jui-icon._timeout:before { content: "\f97a"; }
+.jui-icon._tips:before { content: "\f97b"; }
+.jui-icon._classification:before { content: "\f97c"; }
+.jui-icon._related:before { content: "\f97d"; }
+
+
+
+
+
+
